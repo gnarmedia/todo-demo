@@ -29,3 +29,8 @@ For more details, check the included [README](CRA-README.md)
 - #### Code Style, Formatting, and Standardization:
   - **[Commitizen](http://commitizen.github.io/cz-cli/)** - Detailed, standardized commit messages via CLI
     - **[CZ-Conventional-Changelog](https://github.com/commitizen/cz-conventional-changelog)** - Angular-changelog-style commit message standard for Commitizen
+  - **[Prettier](https://prettier.io/)** - Standardized code style
+  - ##### Helpers:
+    - **[Husky](https://github.com/typicode/husky/tree/master)** - Easier management of git hooks for precommit, prepush, and more
+    - **[Lint-Staged](https://github.com/okonet/lint-staged)** - Run linters and other processors (in our case, Prettier as well) against staged git files
+

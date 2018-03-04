@@ -1,11 +1,11 @@
 // import dependencies
-import React, { Fragment } from 'react';
+import React, { Fragment } from "react";
 
 // mock up a list of tasks, be sure the ids are unique
 const tasks = [
-    { id: 'ryBRDzBdM', title: 'Task 1', isComplete: false },
-    { id: 'HygBRPGBuG', title: 'Task 2', isComplete: true },
-    { id: 'r1ZSCDMruM', title: 'Task 3', isComplete: false }
+    { id: "ryBRDzBdM", title: "Task 1", isComplete: false },
+    { id: "HygBRPGBuG", title: "Task 2", isComplete: true },
+    { id: "r1ZSCDMruM", title: "Task 3", isComplete: false }
 ];
 
 /**
@@ -16,7 +16,7 @@ const tasks = [
 const _renderTask = ({ id, title, isComplete }) => (
     <li key={id.toString()}>
         <input type="checkbox" defaultChecked={isComplete} />
-        {title}&nbsp;[{isComplete ? 'complete' : 'incomplete'}]
+        {title}&nbsp;[{isComplete ? "complete" : "incomplete"}]
     </li>
 );
 
