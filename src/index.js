@@ -1,13 +1,13 @@
 // import dependencies
-import React from 'react';
-import ReactDOM from 'react-dom';
-import registerServiceWorker from './registerServiceWorker';
+import React from "react";
+import ReactDOM from "react-dom";
+import registerServiceWorker from "./registerServiceWorker";
 
 // import our App component
-import App from './App.jsx';
+import App from "./App.jsx";
 
 // render our App component
-ReactDOM.render(<App />, document.getElementById('root'));
+ReactDOM.render(<App />, document.getElementById("root"));
 
 // Register a service worker for caching
 registerServiceWorker();
