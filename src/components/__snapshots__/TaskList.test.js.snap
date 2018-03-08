@@ -1,0 +1,36 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`TaskList renders the TaskList 1`] = `
+<ul>
+  <li>
+    <input
+      defaultChecked={false}
+      type="checkbox"
+    />
+    Task 1
+     [
+    incomplete
+    ]
+  </li>
+  <li>
+    <input
+      defaultChecked={true}
+      type="checkbox"
+    />
+    Task 2
+     [
+    complete
+    ]
+  </li>
+  <li>
+    <input
+      defaultChecked={false}
+      type="checkbox"
+    />
+    Task 3
+     [
+    incomplete
+    ]
+  </li>
+</ul>
+`;

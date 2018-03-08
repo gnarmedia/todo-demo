@@ -1,6 +1,6 @@
-# Item list example
+# Task list example
 
-A basic list example built on [Create React App](https://github.com/facebook/create-react-app)
+A basic task list example built on [Create React App](https://github.com/facebook/create-react-app)
 For more details, check the included [README](CRA-README.md)
 
 ## Dependencies:
