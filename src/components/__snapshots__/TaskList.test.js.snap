@@ -1,33 +1,38 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`TaskList renders the TaskList 1`] = `
-<ul>
-  <li
-    key="1"
-  >
-    <Task
-      isComplete={false}
-      onToggleStatusClick={[Function]}
-      title="Task 1"
-    />
-  </li>
-  <li
-    key="2"
-  >
-    <Task
-      isComplete={true}
-      onToggleStatusClick={[Function]}
-      title="Task 2"
-    />
-  </li>
-  <li
-    key="3"
-  >
-    <Task
-      isComplete={false}
-      onToggleStatusClick={[Function]}
-      title="Task 3"
-    />
-  </li>
-</ul>
+<React.Fragment>
+  <AddTask
+    onAddTaskSubmit={[Function]}
+  />
+  <ul>
+    <li
+      key="1"
+    >
+      <Task
+        isComplete={false}
+        onToggleStatusClick={[Function]}
+        title="Task 1"
+      />
+    </li>
+    <li
+      key="2"
+    >
+      <Task
+        isComplete={true}
+        onToggleStatusClick={[Function]}
+        title="Task 2"
+      />
+    </li>
+    <li
+      key="3"
+    >
+      <Task
+        isComplete={false}
+        onToggleStatusClick={[Function]}
+        title="Task 3"
+      />
+    </li>
+  </ul>
+</React.Fragment>
 `;
