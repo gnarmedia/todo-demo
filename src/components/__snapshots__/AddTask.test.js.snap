@@ -1,0 +1,21 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`AddTask should render the AddTask 1`] = `
+<form
+  onSubmit={[Function]}
+>
+  <label>
+    Add Task: 
+  </label>
+  <input
+    onChange={[Function]}
+    type="text"
+    value=""
+  />
+  <button
+    type="submit"
+  >
+    Add Task
+  </button>
+</form>
+`;
