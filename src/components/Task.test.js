@@ -1,5 +1,5 @@
 import React from "react";
-import renderer from "react-test-renderer";
+import { shallow } from "enzyme";
 
 // import components
 import Task from "./Task.jsx";
@@ -13,16 +13,14 @@ const task = {
 
 describe("Task", function() {
     it("renders the Task with completed status", () => {
-        const tree = renderer
-            .create(<Task title="Complete Task" isComplete={true} />)
-            .toJSON();
+        const tree = shallow(<Task title="Complete Task" isComplete={true} />);
         expect(tree).toMatchSnapshot();
     });
 
     it("renders the Task with incomplete status", () => {
-        const tree = renderer
-            .create(<Task title="Incomplete task" isComplete={false} />)
-            .toJSON();
+        const tree = shallow(
+            <Task title="Incomplete Task" isComplete={false} />
+        );
         expect(tree).toMatchSnapshot();
     });
 });

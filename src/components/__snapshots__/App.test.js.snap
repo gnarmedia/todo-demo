@@ -1,41 +1,30 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`App should render the App 1`] = `
-Array [
+exports[`App should renders the App 1`] = `
+<React.Fragment>
   <h1>
     Task List demo
-</h1>,
-  <ul>
-    <li>
-        <input
-            defaultChecked={false}
-            type="checkbox"
-        />
-        Task 1
-         [
-        incomplete
-        ]
-    </li>
-    <li>
-        <input
-            defaultChecked={true}
-            type="checkbox"
-        />
-        Task 2
-         [
-        complete
-        ]
-    </li>
-    <li>
-        <input
-            defaultChecked={false}
-            type="checkbox"
-        />
-        Task 3
-         [
-        incomplete
-        ]
-    </li>
-</ul>,
-]
+  </h1>
+  <TaskList
+    tasks={
+      Array [
+        Object {
+          "id": "ryBRDzBdM",
+          "isComplete": false,
+          "title": "Task 1",
+        },
+        Object {
+          "id": "HygBRPGBuG",
+          "isComplete": true,
+          "title": "Task 2",
+        },
+        Object {
+          "id": "r1ZSCDMruM",
+          "isComplete": false,
+          "title": "Task 3",
+        },
+      ]
+    }
+  />
+</React.Fragment>
 `;

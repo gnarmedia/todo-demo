@@ -2,35 +2,29 @@
 
 exports[`TaskList renders the TaskList 1`] = `
 <ul>
-  <li>
-    <input
-      defaultChecked={false}
-      type="checkbox"
+  <li
+    key="1"
+  >
+    <Task
+      isComplete={false}
+      title="Task 1"
     />
-    Task 1
-     [
-    incomplete
-    ]
   </li>
-  <li>
-    <input
-      defaultChecked={true}
-      type="checkbox"
+  <li
+    key="2"
+  >
+    <Task
+      isComplete={true}
+      title="Task 2"
     />
-    Task 2
-     [
-    complete
-    ]
   </li>
-  <li>
-    <input
-      defaultChecked={false}
-      type="checkbox"
+  <li
+    key="3"
+  >
+    <Task
+      isComplete={false}
+      title="Task 3"
     />
-    Task 3
-     [
-    incomplete
-    ]
   </li>
 </ul>
 `;

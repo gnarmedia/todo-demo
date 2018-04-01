@@ -34,3 +34,7 @@ For more details, check the included [README](CRA-README.md)
     - **[Husky](https://github.com/typicode/husky/tree/master)** - Easier management of git hooks for precommit, prepush, and more
     - **[Lint-Staged](https://github.com/okonet/lint-staged)** - Run linters and other processors (in our case, Prettier as well) against staged git files
 
+- #### Testing:
+  - **[Enzyme](https://github.com/airbnb/enzyme)** - JavaScript Testing utilities for React, easy shallow rendering and more
+    - **[Enzyme-Adapter-React-16](https://github.com/airbnb/enzyme/tree/master/packages/enzyme-adapter-react-16)** - Enzyme adapter to allow Enzyme to work with React
+    - **[Enzyme-To-JSON](https://github.com/adriantoine/enzyme-to-json)** - Serializes Enzyme wrappers to JSON for snapshot testing with Jest
