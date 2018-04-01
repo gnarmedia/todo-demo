@@ -1,9 +1,10 @@
 // import dependencies
-import React, { Component } from "react";
+import React, { Fragment, Component } from "react";
 import PropTypes from "prop-types";
 
 // import components
 import Task from "./Task.jsx";
+import AddTask from "./AddTask.jsx";
 
 /**
  * @name: TaskList
@@ -18,6 +19,7 @@ class TaskList extends Component {
 
         this._renderTask = this._renderTask.bind(this);
         this.handleToggleStatusClick = this.handleToggleStatusClick.bind(this);
+        this.handleAddTaskSubmit = this.handleAddTaskSubmit.bind(this);
     }
 
     _renderTask({ id, title, isComplete, onToggleStatusClick }) {
@@ -44,8 +46,23 @@ class TaskList extends Component {
         );
     }
 
+    handleAddTaskSubmit(task) {
+        this.setState((prevState, props) => {
+            const tasks = prevState.tasks,
+                newTasksObj = {};
+            tasks.splice(0, 0, task);
+            newTasksObj.tasks = tasks;
+            return newTasksObj;
+        });
+    }
+
     render() {
-        return <ul>{this.props.tasks.map(this._renderTask)}</ul>;
+        return (
+            <Fragment>
+                <AddTask onAddTaskSubmit={this.handleAddTaskSubmit} />
+                <ul>{this.props.tasks.map(this._renderTask)}</ul>
+            </Fragment>
+        );
     }
 }
 
