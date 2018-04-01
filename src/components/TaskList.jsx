@@ -2,6 +2,9 @@
 import React from "react";
 import PropTypes from "prop-types";
 
+// import components
+import Task from "./Task.jsx";
+
 /**
  * @name: _renderTask
  * @desc: This function renders the task component
@@ -9,8 +12,7 @@ import PropTypes from "prop-types";
  */
 const _renderTask = ({ id, title, isComplete }) => (
     <li key={id.toString()}>
-        <input type="checkbox" defaultChecked={isComplete} />
-        {title}&nbsp;[{isComplete ? "complete" : "incomplete"}]
+        <Task title={title} isComplete={isComplete} />
     </li>
 );
 
