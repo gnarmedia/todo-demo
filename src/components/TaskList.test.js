@@ -41,4 +41,27 @@ describe("TaskList", () => {
         expect(wrapper.instance().handleToggleStatusClick("2"));
         expect(wrapper.state().tasks[1].isComplete).toEqual(true);
     });
+
+    it("should add a task", () => {
+        const tasks = [
+                { id: "1", title: "Task 1", isComplete: false },
+                { id: "2", title: "Task 2", isComplete: false }
+            ],
+            wrapper = shallow(<TaskList tasks={tasks} />);
+        expect(wrapper.state().tasks).toEqual(tasks);
+        expect(
+            wrapper.instance().handleAddTaskSubmit({
+                id: "3",
+                title: "Task 3",
+                isComplete: false
+            })
+        );
+        expect(wrapper.state()).toEqual({
+            tasks: [
+                { id: "3", title: "Task 3", isComplete: false },
+                { id: "1", title: "Task 1", isComplete: false },
+                { id: "2", title: "Task 2", isComplete: false }
+            ]
+        });
+    });
 });
