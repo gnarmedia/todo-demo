@@ -7,6 +7,7 @@ exports[`TaskList renders the TaskList 1`] = `
   >
     <Task
       isComplete={false}
+      onToggleStatusClick={[Function]}
       title="Task 1"
     />
   </li>
@@ -15,6 +16,7 @@ exports[`TaskList renders the TaskList 1`] = `
   >
     <Task
       isComplete={true}
+      onToggleStatusClick={[Function]}
       title="Task 2"
     />
   </li>
@@ -23,6 +25,7 @@ exports[`TaskList renders the TaskList 1`] = `
   >
     <Task
       isComplete={false}
+      onToggleStatusClick={[Function]}
       title="Task 3"
     />
   </li>

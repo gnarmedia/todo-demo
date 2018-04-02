@@ -1,20 +1,9 @@
 // import dependencies
-import React from "react";
+import React, { Component } from "react";
 import PropTypes from "prop-types";
 
 // import components
 import Task from "./Task.jsx";
-
-/**
- * @name: _renderTask
- * @desc: This function renders the task component
- * @param {object} task
- */
-const _renderTask = ({ id, title, isComplete }) => (
-    <li key={id.toString()}>
-        <Task title={title} isComplete={isComplete} />
-    </li>
-);
 
 /**
  * @name: TaskList
@@ -22,9 +11,43 @@ const _renderTask = ({ id, title, isComplete }) => (
  * @param: {array} tasks
  * @returns: {function}
  */
-const TaskList = ({ tasks }) => {
-    return <ul>{tasks.map(_renderTask)}</ul>;
-};
+class TaskList extends Component {
+    constructor(props) {
+        super(props);
+        this.state = { tasks: props.tasks };
+
+        this._renderTask = this._renderTask.bind(this);
+        this.handleToggleStatusClick = this.handleToggleStatusClick.bind(this);
+    }
+
+    _renderTask({ id, title, isComplete, onToggleStatusClick }) {
+        return (
+            <li key={id.toString()}>
+                <Task
+                    title={title}
+                    isComplete={isComplete}
+                    onToggleStatusClick={() => this.handleToggleStatusClick(id)}
+                />
+            </li>
+        );
+    }
+
+    handleToggleStatusClick(id) {
+        this.setState((prevState, props) =>
+            prevState.tasks.map(t => {
+                if (t.id === id) {
+                    t.isComplete = !t.isComplete;
+                }
+
+                return t;
+            })
+        );
+    }
+
+    render() {
+        return <ul>{this.props.tasks.map(this._renderTask)}</ul>;
+    }
+}
 
 // These are proptypes, they are used to define the expected minimum prop values
 // for a component

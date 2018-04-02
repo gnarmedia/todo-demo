@@ -14,4 +14,31 @@ describe("TaskList", () => {
             tree = shallow(<TaskList tasks={tasks} />);
         expect(tree).toMatchSnapshot();
     });
+
+    it("should toggle the first task's 'isComplete' prop to 'true'", () => {
+        const tasks = [{ id: "1", title: "Task 1", isComplete: false }],
+            wrapper = shallow(<TaskList tasks={tasks} />);
+        expect(wrapper.state().tasks).toEqual(tasks);
+        expect(wrapper.instance().handleToggleStatusClick("1"));
+        expect(wrapper.state().tasks[0].isComplete).toEqual(true);
+    });
+
+    it("should toggle the first task's 'isComplete' prop to 'false'", () => {
+        const tasks = [{ id: "1", title: "Task 1", isComplete: true }],
+            wrapper = shallow(<TaskList tasks={tasks} />);
+        expect(wrapper.state().tasks).toEqual(tasks);
+        expect(wrapper.instance().handleToggleStatusClick("1"));
+        expect(wrapper.state().tasks[0].isComplete).toEqual(false);
+    });
+
+    it("should toggle the second task's 'isComplete' prop to 'true'", () => {
+        const tasks = [
+                { id: "1", title: "Task 1", isComplete: false },
+                { id: "2", title: "Task 2", isComplete: false }
+            ],
+            wrapper = shallow(<TaskList tasks={tasks} />);
+        expect(wrapper.state().tasks).toEqual(tasks);
+        expect(wrapper.instance().handleToggleStatusClick("2"));
+        expect(wrapper.state().tasks[1].isComplete).toEqual(true);
+    });
 });

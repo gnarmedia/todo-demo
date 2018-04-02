@@ -4,6 +4,7 @@ exports[`Task renders the Task with completed status 1`] = `
 <React.Fragment>
   <input
     defaultChecked={true}
+    onClick={[Function]}
     type="checkbox"
   />
   Complete Task
@@ -17,9 +18,10 @@ exports[`Task renders the Task with incomplete status 1`] = `
 <React.Fragment>
   <input
     defaultChecked={false}
+    onClick={[Function]}
     type="checkbox"
   />
-  Incomplete task
+  Incomplete Task
    [
   incomplete
   ]
