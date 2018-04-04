@@ -5,12 +5,12 @@ Array [
   <input
     defaultChecked={true}
     type="checkbox"
-/>,
-  "Complete Task",
-  " [",
-  "complete",
-  "]",
-]
+  />
+  Complete Task
+   [
+  complete
+  ]
+</React.Fragment>
 `;
 
 exports[`Task should render the Task with incomplete status 1`] = `
@@ -18,10 +18,36 @@ Array [
   <input
     defaultChecked={false}
     type="checkbox"
-/>,
-  "Incomplete task",
-  " [",
-  "incomplete",
-  "]",
-]
+  />
+  Incomplete task
+   [
+  incomplete
+  ]
+</React.Fragment>
+`;
+
+exports[`Task should render the Task with completed status 1`] = `
+<React.Fragment>
+  <input
+    defaultChecked={true}
+    type="checkbox"
+  />
+  Complete Task
+   [
+  complete
+  ]
+</React.Fragment>
+`;
+
+exports[`Task should render the Task with incomplete status 1`] = `
+<React.Fragment>
+  <input
+    defaultChecked={false}
+    type="checkbox"
+  />
+  Incomplete Task
+   [
+  incomplete
+  ]
+</React.Fragment>
 `;

@@ -1,5 +1,5 @@
 import React from "react";
-import renderer from "react-test-renderer";
+import { shallow } from "enzyme";
 
 // import components
 import TaskList from "./TaskList.jsx";
@@ -11,8 +11,8 @@ describe("TaskList", () => {
                 { id: "2", title: "Task 2", isComplete: true },
                 { id: "3", title: "Task 3", isComplete: false }
             ],
-            tree = renderer.create(<TaskList tasks={tasks} />).toJSON();
+            wrapper = shallow(<TaskList tasks={tasks} />);
 
-        expect(tree).toMatchSnapshot();
+        expect(wrapper).toMatchSnapshot();
     });
 });

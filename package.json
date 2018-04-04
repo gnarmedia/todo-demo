@@ -22,12 +22,19 @@
       "git add"
     ]
   },
+  "jest": {
+    "snapshotSerializers": [
+      "enzyme-to-json/serializer"
+    ]
+  },
   "devDependencies": {
     "commitizen": "^2.9.6",
     "cz-conventional-changelog": "^2.1.0",
+    "enzyme": "^3.3.0",
+    "enzyme-adapter-react-16": "^1.1.1",
+    "enzyme-to-json": "^3.3.1",
     "husky": "^0.14.3",
     "lint-staged": "^7.0.0",
-    "prettier": "^1.11.1",
-    "react-test-renderer": "^16.2.0"
+    "prettier": "^1.11.1"
   }
 }
