@@ -1,38 +1,13 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Task should render the Task with completed status 1`] = `
-Array [
-  <input
-    defaultChecked={true}
-    type="checkbox"
-  />
-  Complete Task
-   [
-  complete
-  ]
-</React.Fragment>
-`;
-
-exports[`Task should render the Task with incomplete status 1`] = `
-Array [
-  <input
-    defaultChecked={false}
-    type="checkbox"
-  />
-  Incomplete task
-   [
-  incomplete
-  ]
-</React.Fragment>
-`;
-
-exports[`Task should render the Task with completed status 1`] = `
 <React.Fragment>
   <input
     defaultChecked={true}
+    onClick={[Function]}
     type="checkbox"
   />
-  Complete Task
+  Completed Task
    [
   complete
   ]
@@ -43,6 +18,7 @@ exports[`Task should render the Task with incomplete status 1`] = `
 <React.Fragment>
   <input
     defaultChecked={false}
+    onClick={[Function]}
     type="checkbox"
   />
   Incomplete Task
