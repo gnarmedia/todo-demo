@@ -20,6 +20,7 @@ class TaskList extends Component {
         this._renderTask = this._renderTask.bind(this);
         this.handleToggleStatusClick = this.handleToggleStatusClick.bind(this);
         this.handleAddSubmit = this.handleAddSubmit.bind(this);
+        this.handleRemoveClick = this.handleRemoveClick.bind(this);
     }
 
     _renderTask({ id, title, isComplete }) {
@@ -52,6 +53,15 @@ class TaskList extends Component {
             const tasks = Object.assign({}, prevState).tasks;
 
             tasks.splice(0, 0, task);
+            return { tasks };
+        });
+    }
+
+    handleRemoveClick(id) {
+        this.setState((prevState, props) => {
+            let tasks = Object.assign({}, prevState).tasks;
+
+            tasks = tasks.filter(x => x.id !== id);
             return { tasks };
         });
     }

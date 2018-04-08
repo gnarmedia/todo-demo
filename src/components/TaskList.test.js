@@ -60,4 +60,21 @@ describe("TaskList", () => {
         wrapper.instance().handleAddSubmit(taskToAdd);
         expect(wrapper.state()).toEqual({ tasks: tasksAfter });
     });
+
+    it("should remove a task", () => {
+        const tasks = [
+                { id: "1", title: "Task 1", isComplete: false },
+                { id: "2", title: "Task 2", isComplete: false },
+                { id: "3", title: "Task 3", isComplete: false }
+            ],
+            wrapper = shallow(<TaskList tasks={tasks} />);
+
+        expect(wrapper.instance().handleRemoveClick("3"));
+        expect(wrapper.state()).toEqual({
+            tasks: [
+                { id: "1", title: "Task 1", isComplete: false },
+                { id: "2", title: "Task 2", isComplete: false }
+            ]
+        });
+    });
 });

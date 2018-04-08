@@ -8,7 +8,7 @@ import PropTypes from "prop-types";
  * @param {object} task
  * @returns: {function}
  */
-const Task = ({ title, isComplete, onToggleStatusClick }) => {
+const Task = ({ title, isComplete, onToggleStatusClick, onRemoveClick }) => {
     return (
         // Fragments are used to wrap multiple rendered elements within a component
         <Fragment>
@@ -18,7 +18,8 @@ const Task = ({ title, isComplete, onToggleStatusClick }) => {
                 defaultChecked={isComplete}
                 onClick={onToggleStatusClick}
             />
-            {title}&nbsp;[{isComplete ? "complete" : "incomplete"}]
+            {title}&nbsp;[{isComplete ? "complete" : "incomplete"}]&nbsp;
+            <button onClick={onRemoveClick}>remove</button>
         </Fragment>
     );
 };
@@ -26,7 +27,8 @@ const Task = ({ title, isComplete, onToggleStatusClick }) => {
 Task.propTypes = {
     title: PropTypes.string.isRequired,
     isComplete: PropTypes.bool.isRequired,
-    onToggleStatusClick: PropTypes.func.isRequired
+    onToggleStatusClick: PropTypes.func.isRequired,
+    onRemoveClick: PropTypes.func.isRequired
 };
 
 // export our component for importing into other modules

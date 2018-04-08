@@ -10,7 +10,12 @@ exports[`Task should render the Task with completed status 1`] = `
   Completed Task
    [
   complete
-  ]
+  ] 
+  <button
+    onClick={[Function]}
+  >
+    remove
+  </button>
 </React.Fragment>
 `;
 
@@ -24,6 +29,11 @@ exports[`Task should render the Task with incomplete status 1`] = `
   Incomplete Task
    [
   incomplete
-  ]
+  ] 
+  <button
+    onClick={[Function]}
+  >
+    remove
+  </button>
 </React.Fragment>
 `;

@@ -15,13 +15,15 @@ const task = {
 function _renderTask({
     title = "Task",
     isComplete = false,
-    onToggleStatusClick = () => {}
+    onToggleStatusClick = () => {},
+    onRemoveClick = () => {}
 }) {
     return (
         <Task
             title={title}
             isComplete={isComplete}
             onToggleStatusClick={onToggleStatusClick}
+            onRemoveClick={onRemoveClick}
         />
     );
 }
@@ -50,5 +52,17 @@ describe("Task", function() {
         expect(wrapper.find("input").exists()).toEqual(true);
         wrapper.find("input").simulate("click");
         expect(onToggleStatusClickMock).toHaveBeenCalled();
+    });
+
+    it("should call onRemoveClick when 'remove' button is clicked", () => {
+        const onRemoveClickMock = jest.fn(),
+            wrapper = shallow(
+                _renderTask({ onRemoveClick: onRemoveClickMock })
+            ),
+            $button = wrapper.find("button");
+
+        expect($button.exists()).toEqual(true);
+        $button.simulate("click");
+        expect(onRemoveClickMock).toHaveBeenCalled();
     });
 });
