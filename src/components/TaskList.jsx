@@ -5,6 +5,7 @@ import PropTypes from "prop-types";
 // import components
 import Task from "./Task.jsx";
 import AddTask from "./AddTask.jsx";
+import FilterTask from "./FilterTask.jsx";
 
 /**
  * @name: TaskList
@@ -15,12 +16,16 @@ import AddTask from "./AddTask.jsx";
 class TaskList extends Component {
     constructor(props) {
         super(props);
-        this.state = { tasks: props.tasks };
+        this.state = {
+            filter: props.filter,
+            tasks: props.tasks
+        };
 
         this._renderTask = this._renderTask.bind(this);
         this.handleToggleStatusClick = this.handleToggleStatusClick.bind(this);
         this.handleAddSubmit = this.handleAddSubmit.bind(this);
         this.handleRemoveClick = this.handleRemoveClick.bind(this);
+        this.handleFilterClick = this.handleFilterClick.bind(this);
     }
 
     _renderTask({ id, title, isComplete }) {
@@ -34,6 +39,17 @@ class TaskList extends Component {
                 />
             </li>
         );
+    }
+
+    _shouldFilterTask(filter, task) {
+        if (
+            (filter === "COMPLETE" && !task.isComplete) ||
+            (filter === "INCOMPLETE" && task.isComplete)
+        ) {
+            return false;
+        }
+
+        return true;
     }
 
     handleToggleStatusClick(id) {
@@ -59,18 +75,31 @@ class TaskList extends Component {
 
     handleRemoveClick(id) {
         this.setState((prevState, props) => {
-            let tasks = Object.assign({}, prevState).tasks;
+            const tasks = Object.assign({}, prevState)
+                .tasks
+                .filter(x => x.id !== id);
 
             tasks = tasks.filter(x => x.id !== id);
             return { tasks };
         });
     }
 
+    handleFilterClick(filter) {
+        this.setState((prevState, props) => ({ filter }));
+    }
+
     render() {
+        const filter = this.state.filter;
+
         return (
             <Fragment>
                 <AddTask onSubmit={this.handleAddSubmit} />
-                <ul>{this.state.tasks.map(this._renderTask)}</ul>
+                <ul>
+                    {this.state.tasks
+                        .filter(task => this._shouldFilterTask(filter, task))
+                        .map(this._renderTask)}
+                </ul>
+                <FilterTask onFilterClick={this.handleFilterClick} />
             </Fragment>
         );
     }
@@ -79,6 +108,7 @@ class TaskList extends Component {
 // These are proptypes, they are used to define the expected minimum prop values
 // for a component
 TaskList.propTypes = {
+    filter: PropTypes.string.isRequired,
     tasks: PropTypes.arrayOf(
         PropTypes.shape({
             id: PropTypes.string.isRequired,

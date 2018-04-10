@@ -1,0 +1,24 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`FilterTask should render the FilterTask 1`] = `
+<ul>
+  <button
+    key="filterTask_All"
+    onClick={[Function]}
+  >
+    All
+  </button>
+  <button
+    key="filterTask_Incomplete"
+    onClick={[Function]}
+  >
+    Incomplete
+  </button>
+  <button
+    key="filterTask_Complete"
+    onClick={[Function]}
+  >
+    Complete
+  </button>
+</ul>
+`;

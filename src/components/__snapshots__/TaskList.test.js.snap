@@ -37,5 +37,8 @@ exports[`TaskList should render the TaskList 1`] = `
       />
     </li>
   </ul>
+  <FilterTask
+    onFilterClick={[Function]}
+  />
 </React.Fragment>
 `;

@@ -20,7 +20,7 @@ const tasks = [
 const App = () => (
     <Fragment>
         <h1>Task List demo</h1>
-        <TaskList tasks={tasks} />
+        <TaskList tasks={tasks} filter="ALL" />
     </Fragment>
 );
 

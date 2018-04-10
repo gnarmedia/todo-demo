@@ -6,6 +6,7 @@ exports[`App should render the App 1`] = `
     Task List demo
   </h1>
   <TaskList
+    filter="ALL"
     tasks={
       Array [
         Object {
