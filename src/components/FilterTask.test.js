@@ -6,13 +6,8 @@ import FilterTask from "./FilterTask.jsx";
 
 describe("FilterTask", () => {
     it("should render the FilterTask", () => {
-        const handleFilterClickMock = jest.fn(),
-            wrapper = shallow(
-                <FilterTask onFilterClick={handleFilterClickMock} />
-            );
+        const wrapper = shallow(<FilterTask onFilterClick={jest.fn()} />);
 
         expect(wrapper).toMatchSnapshot();
     });
-
-    // add event handler test
 });

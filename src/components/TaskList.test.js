@@ -75,6 +75,23 @@ describe("TaskList", () => {
             { id: "2", title: "Task 2", isComplete: false }
         ]);
     });
+});
 
-    // add filter test
+describe("_shouldFilterTask()", () => {
+    it("should behave...", () => {
+        const taskList = new TaskList({});
+
+        expect(
+            taskList._shouldFilterTask("COMPLETE", { isComplete: false })
+        ).toEqual(false);
+        expect(
+            taskList._shouldFilterTask("INCOMPLETE", { isComplete: true })
+        ).toEqual(false);
+        expect(
+            taskList._shouldFilterTask("COMPLETE", { isComplete: true })
+        ).toEqual(true);
+        expect(
+            taskList._shouldFilterTask("INCOMPLETE", { isComplete: false })
+        ).toEqual(true);
+    });
 });

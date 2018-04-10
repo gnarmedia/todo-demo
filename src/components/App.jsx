@@ -5,11 +5,15 @@ import React, { Fragment } from "react";
 import TaskList from "./TaskList.jsx";
 
 // mock up a list of tasks, be sure the ids are unique
-const tasks = [
-    { id: "ryBRDzBdM", title: "Task 1", isComplete: false },
-    { id: "HygBRPGBuG", title: "Task 2", isComplete: true },
-    { id: "r1ZSCDMruM", title: "Task 3", isComplete: false }
-];
+const localTasks = localStorage.getItem("tasks"),
+    tasks = (localTasks ? 
+        JSON.parse(localStorage.getItem("tasks")) :
+        [
+            { id: "ryBRDzBdM", title: "Task 1", isComplete: false },
+            { id: "HygBRPGBuG", title: "Task 2", isComplete: true },
+            { id: "r1ZSCDMruM", title: "Task 3", isComplete: false }
+        ]
+    );
 
 /**
  * @name: App

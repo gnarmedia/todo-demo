@@ -53,15 +53,18 @@ class TaskList extends Component {
     }
 
     handleToggleStatusClick(id) {
-        this.setState((prevState, props) =>
-            prevState.tasks.map(t => {
-                if (t.id === id) {
-                    t.isComplete = !t.isComplete;
+        this.setState((prevState, props) => {
+            const tasksMapped = prevState.tasks.map(task => {
+                if (task.id === id) {
+                    task.isComplete = !task.isComplete;
                 }
 
-                return t;
-            })
-        );
+                return task;
+            });
+
+            localStorage.setItem("tasks", JSON.stringify(tasksMapped));
+            return tasksMapped;
+        });
     }
 
     handleAddSubmit(task) {
@@ -69,22 +72,25 @@ class TaskList extends Component {
             const tasks = Object.assign({}, prevState).tasks;
 
             tasks.splice(0, 0, task);
+
+            localStorage.setItem("tasks", JSON.stringify(tasks));
             return { tasks };
         });
     }
 
     handleRemoveClick(id) {
         this.setState((prevState, props) => {
-            const tasks = Object.assign({}, prevState)
-                .tasks
-                .filter(x => x.id !== id);
+            const tasks = Object.assign({}, prevState).tasks.filter(
+                x => x.id !== id
+            );
 
-            tasks = tasks.filter(x => x.id !== id);
+            localStorage.setItem("tasks", JSON.stringify(tasks));
             return { tasks };
         });
     }
 
     handleFilterClick(filter) {
+        localStorage.setItem("filter", JSON.stringify(filter));
         this.setState((prevState, props) => ({ filter }));
     }
 
