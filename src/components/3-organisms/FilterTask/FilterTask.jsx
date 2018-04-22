@@ -3,10 +3,10 @@ import React from "react";
 import PropTypes from "prop-types";
 
 /**
- * @name: FilterTask
- * @desc: Filters for tasks
+ * @name FilterTask
+ * @desc Filters for tasks
  * @param {string} filter
- * @returns: {function}
+ * @returns {function}
  */
 const FilterTask = ({ onFilterClick }) => {
     const filters = ["All", "Incomplete", "Complete"];

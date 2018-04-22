@@ -3,10 +3,10 @@ import React, { Fragment } from "react";
 import PropTypes from "prop-types";
 
 /**
- * @name: Task
- * @desc: A task with status
+ * @name Task
+ * @desc A task with status
  * @param {object} task
- * @returns: {function}
+ * @returns {function}
  */
 const Task = ({ title, isComplete, onToggleStatusClick, onRemoveClick }) => {
     return (

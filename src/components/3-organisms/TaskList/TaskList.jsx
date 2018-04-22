@@ -3,15 +3,15 @@ import React, { Fragment, Component } from "react";
 import PropTypes from "prop-types";
 
 // import components
-import Task from "./Task.jsx";
-import AddTask from "./AddTask.jsx";
-import FilterTask from "./FilterTask.jsx";
+import Task from "../Task/Task.jsx";
+import AddTask from "../AddTask/AddTask.jsx";
+import FilterTask from "../FilterTask/FilterTask.jsx";
 
 /**
- * @name: TaskList
- * @desc: A list of tasks with statuses
- * @param: {array} tasks
- * @returns: {function}
+ * @name TaskList
+ * @desc A list of tasks with statuses
+ * @param {array} tasks
+ * @returns {function}
  */
 class TaskList extends Component {
     constructor(props) {

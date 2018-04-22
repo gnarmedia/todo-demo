@@ -1,7 +1,12 @@
 // import dependencies
 import React, { Component } from "react";
 import shortid from "shortid";
-
+/**
+ * @name AddTask
+ * @desc class for adding a task to the task list
+ * @class AddTask
+ * @extends {Component}
+ */
 class AddTask extends Component {
     constructor(props) {
         super(props);
@@ -10,7 +15,12 @@ class AddTask extends Component {
         this.handleChange = this.handleChange.bind(this);
         this.handleSubmit = this.handleSubmit.bind(this);
     }
-
+    /**
+     *
+     *
+     * @param {any} event
+     * @memberof AddTask
+     */
     handleChange(event) {
         this.setState({ value: event.target.value });
     }
