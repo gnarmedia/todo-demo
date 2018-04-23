@@ -3,9 +3,7 @@ import React, { Component } from "react";
 import shortid from "shortid";
 /**
  * @name AddTask
- * @desc class for adding a task to the task list
- * @class AddTask
- * @extends {Component}
+ * @desc An AddTask class with a form for adding tasks
  */
 class AddTask extends Component {
     constructor(props) {

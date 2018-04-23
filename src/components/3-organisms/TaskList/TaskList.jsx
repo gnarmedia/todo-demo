@@ -9,11 +9,13 @@ import FilterTask from "../FilterTask/FilterTask.jsx";
 
 /**
  * @name TaskList
- * @desc A list of tasks with statuses
- * @param {array} tasks
- * @returns {function}
+ * @desc A TaskList class with a list of tasks with statuses
  */
 class TaskList extends Component {
+    /**
+     * @name constructor
+     * @param {object} props (tasks and filter)
+     */
     constructor(props) {
         super(props);
         this.state = {
@@ -28,6 +30,12 @@ class TaskList extends Component {
         this.handleFilterClick = this.handleFilterClick.bind(this);
     }
 
+    /**
+     * @name _renderTask
+     * @desc task render helper
+     * @param {object} task
+     * @returns {function} Task component with li
+     */
     _renderTask({ id, title, isComplete }) {
         return (
             <li key={id.toString()}>
@@ -41,6 +49,13 @@ class TaskList extends Component {
         );
     }
 
+    /**
+     * @name _filterTask
+     * @desc Determines if task should be filtered or not
+     * @param {string} filter
+     * @param {object} task
+     * @returns {boolean} Flag for whether or not task should be filtered
+     */
     _shouldFilterTask(filter, task) {
         if (
             (filter === "COMPLETE" && !task.isComplete) ||
@@ -52,6 +67,11 @@ class TaskList extends Component {
         return true;
     }
 
+    /**
+     * @name handleToggleStatusClick
+     * @desc Handles the click event for the task status toggle
+     * @param {striing} id
+     */
     handleToggleStatusClick(id) {
         this.setState((prevState, props) => {
             const tasksMapped = prevState.tasks.map(task => {
@@ -67,6 +87,11 @@ class TaskList extends Component {
         });
     }
 
+    /**
+     * @name handleAddSubmit
+     * @desc Handles submission of task to add
+     * @param {object} task
+     */
     handleAddSubmit(task) {
         this.setState((prevState, props) => {
             const tasks = Object.assign({}, prevState).tasks;
@@ -78,6 +103,11 @@ class TaskList extends Component {
         });
     }
 
+    /**
+     * @name handleRemoveClick
+     * @desc Handles the click event for the remove task button
+     * @param {*} id 
+     */
     handleRemoveClick(id) {
         this.setState((prevState, props) => {
             const tasks = Object.assign({}, prevState).tasks.filter(
@@ -89,11 +119,21 @@ class TaskList extends Component {
         });
     }
 
+    /**
+     * @name handleFilterClick
+     * @desc Handles the click event for the task filter buttons
+     * @param {string} filter 
+     */
     handleFilterClick(filter) {
         localStorage.setItem("filter", JSON.stringify(filter));
         this.setState((prevState, props) => ({ filter }));
     }
 
+    /**
+     * @name render
+     * @desc Renders TaskList component
+     * @returns {function} TaskList component
+     */
     render() {
         const filter = this.state.filter;
 

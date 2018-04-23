@@ -16,9 +16,8 @@ const localTasks = localStorage.getItem("tasks"),
 
 /**
  * @name App
- * @desc This is a function that renders the markup for our app, for brevity it
- *        is all done in a single component.
- * @returns {function}
+ * @desc Renders the markup for our app
+ * @returns {function} App component
  */
 const App = () => (
     <Fragment>

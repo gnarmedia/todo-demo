@@ -4,9 +4,9 @@ import PropTypes from "prop-types";
 
 /**
  * @name FilterTask
- * @desc Filters for tasks
+ * @desc Renders a filter task component
  * @param {string} filter
- * @returns {function}
+ * @returns {function} FilterTask component
  */
 const FilterTask = ({ onFilterClick }) => {
     const filters = ["All", "Incomplete", "Complete"];

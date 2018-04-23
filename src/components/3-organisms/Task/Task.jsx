@@ -4,9 +4,9 @@ import PropTypes from "prop-types";
 
 /**
  * @name Task
- * @desc A task with status
+ * @desc Renders a task with status
  * @param {object} task
- * @returns {function}
+ * @returns {function} Task component
  */
 const Task = ({ title, isComplete, onToggleStatusClick, onRemoveClick }) => {
     return (
